@@ -10,6 +10,7 @@ body {
   background-color: #0b0f14;
   color: #e5e5e5;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* NAVBAR */
@@ -100,4 +101,95 @@ body {
 .btn.outline:hover {
   background: #00ff6a;
   color: #000;
+}
+.page {
+  padding: 80px 8%;
+  max-width: 900px;
+}
+
+.page h1 {
+  color: #00ff6a;
+  margin-bottom: 20px;
+}
+
+.page h3 {
+  margin-top: 30px;
+  color: #b2ffcc;
+}
+
+.page ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.page ul li {
+  margin-bottom: 8px;
+  color: #b0bec5;
+}
+
+.active {
+  color: #00ff6a;
+}
+/* MOBILE NAVBAR */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #00ff6a;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 8%;
+    background: #0b0f14;
+    border: 1px solid #1f2933;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 15px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+/* FADE-IN ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* APPLY ANIMATION */
+.hero, .page {
+  animation: fadeUp 0.8s ease-out;
+}
+
+/* ICON COLOR */
+i {
+  color: #00ff6a;
+  margin-right: 8px;
+}
+
+/* HOVER GLOW (SUBTLE) */
+.nav-links a:hover,
+.btn:hover {
+  text-shadow: 0 0 6px rgba(0, 255, 106, 0.6);
+}
+
+/* LIST HOVER */
+.page ul li:hover {
+  color: #00ff6a;
+  transition: 0.2s;
 }
