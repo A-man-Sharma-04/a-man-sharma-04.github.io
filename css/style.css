@@ -193,3 +193,205 @@ i {
   color: #00ff6a;
   transition: 0.2s;
 }
+.hero-intro {
+  padding: 120px 8% 60px;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 56px;
+  color: #00ff6a;
+  animation: slideFade 0.8s ease-out forwards;
+}
+
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b0bec5;
+  max-width: 700px;
+  animation: slideFade 1.1s ease-out forwards;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* SOCIAL LINKS STRIP */
+.social-strip {
+  margin-top: 40px;
+  padding: 0 8%;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.social-strip a {
+  font-size: 22px;
+  color: #9aa7b2;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-strip a:hover {
+  color: #00ff6a;
+  transform: translateY(-4px);
+  text-shadow: 0 0 8px rgba(0, 255, 106, 0.6);
+}
+/* LEARNING JOURNEY PAGE */
+.journey-container {
+  padding: 80px 8%;
+  max-width: 900px;
+}
+
+.journey-title {
+  font-size: 42px;
+  color: #00ff6a;
+  margin-bottom: 15px;
+}
+
+.journey-intro {
+  color: #b0bec5;
+  max-width: 700px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* STACK LAYOUT */
+.journey-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* NODE BASE */
+.journey-node {
+  position: relative;
+  background: #0f141b;
+  border: 1px solid #1f2933;
+  padding: 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.journey-node h3 {
+  color: #b2ffcc;
+  margin-bottom: 8px;
+}
+
+.journey-node p {
+  color: #9aa7b2;
+  line-height: 1.5;
+}
+
+/* STATUS BADGE */
+.journey-node .status {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* STATUS COLORS */
+.explored .status {
+  background: #00ff6a;
+  color: #000;
+}
+
+.exploring .status {
+  background: rgba(0, 255, 106, 0.2);
+  color: #00ff6a;
+  border: 1px solid #00ff6a;
+}
+
+.interest .status {
+  background: #1f2933;
+  color: #9aa7b2;
+}
+
+/* INTERACTION */
+.journey-node:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 255, 106, 0.18);
+}
+/* DOMAIN PAGE */
+.domain-container {
+  padding: 80px 8%;
+  max-width: 900px;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.domain-header h1 {
+  font-size: 42px;
+  color: #00ff6a;
+  margin-bottom: 15px;
+}
+
+.domain-header p {
+  color: #b0bec5;
+  line-height: 1.6;
+  max-width: 750px;
+}
+
+/* DOMAIN SECTIONS */
+.domain-section {
+  margin-top: 50px;
+}
+
+.domain-section h2 {
+  color: #b2ffcc;
+  margin-bottom: 15px;
+}
+
+.domain-section p {
+  color: #9aa7b2;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.domain-section ul {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.domain-section ul li {
+  margin-bottom: 8px;
+  color: #b0bec5;
+}
+
+/* TOOL LIST */
+.tool-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tool-list li {
+  background: #0f141b;
+  border: 1px solid #1f2933;
+  padding: 10px 14px;
+  border-radius: 4px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tool-list li:hover {
+  color: #00ff6a;
+  box-shadow: 0 0 12px rgba(0, 255, 106, 0.15);
+}
+
+/* DOMAIN NAV */
+.domain-nav {
+  margin-top: 60px;
+}
