@@ -41,41 +41,54 @@ body {
 .nav-links a {
   text-decoration: none;
   color: #cfd8dc;
-  transition: 0.3s;
+  font-weight: 600;       
+  letter-spacing: 0.4px;
+  position:relative;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
 }
 
 .nav-links a:hover {
   color: #00ff6a;
 }
 
-/* HERO */
-.hero {
-  padding: 100px 8%;
-  max-width: 900px;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #00ff6a;
+  transition: width 0.25s ease;
 }
 
-.hero h1 {
-  font-size: 48px;
+.nav-links a:hover::after {
+  width: 100%;
+}
+/* ACTIVE NAV LINK */
+.page-home .nav-links a[href="index.html"],
+.page-journey .nav-links a[href="journey.html"],
+.page-contact .nav-links a[href="contact.html"],
+.page-about .nav-links a[href="about.html"] {
   color: #00ff6a;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0, 255, 106, 0.6);
 }
 
-.hero h2 {
-  font-size: 20px;
-  margin: 15px 0;
-  color: #b0bec5;
-}
-
-.hero p {
-  margin-top: 20px;
-  line-height: 1.6;
-  color: #9aa7b2;
+/* ACTIVE UNDERLINE */
+.page-home .nav-links a[href="index.html"]::after,
+.page-journey .nav-links a[href="journey.html"]::after,
+.page-contact .nav-links a[href="contact.html"]::after,
+.page-about .nav-links a[href="about.html"]::after {
+  width: 100%;
 }
 
 /* BUTTONS */
 .hero-buttons {
   margin-top: 30px;
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
 .btn {
@@ -172,7 +185,7 @@ body {
 }
 
 /* APPLY ANIMATION */
-.hero, .page {
+.page {
   animation: fadeUp 0.8s ease-out;
 }
 
@@ -394,4 +407,25 @@ i {
 /* DOMAIN NAV */
 .domain-nav {
   margin-top: 60px;
+}
+.about-intro {
+  font-size: 18px;
+  color: #b0bec5;
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.about-block {
+  margin-bottom: 35px;
+}
+
+.about-block h3 {
+  color: #b2ffcc;
+  margin-bottom: 10px;
+}
+
+.about-block p {
+  color: #9aa7b2;
+  line-height: 1.6;
+  max-width: 800px;
 }
