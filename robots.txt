@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thisamansharma.is-a.dev/sitemap.xml
