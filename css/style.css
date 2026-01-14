@@ -67,17 +67,20 @@ body {
 }
 /* ACTIVE NAV LINK */
 .page-home .nav-links a[href="index.html"],
+.page-home .nav-links a[href="/"],
 .page-journey .nav-links a[href="journey.html"],
+.page-blog .nav-links a[href="/blog/"],
 .page-contact .nav-links a[href="contact.html"],
 .page-about .nav-links a[href="about.html"] {
   color: #00ff6a;
   font-weight: 700;
   text-shadow: 0 0 6px rgba(0, 255, 106, 0.6);
 }
-
 /* ACTIVE UNDERLINE */
 .page-home .nav-links a[href="index.html"]::after,
+.page-home .nav-links a[href="/"]::after,
 .page-journey .nav-links a[href="journey.html"]::after,
+.page-blog .nav-links a[href="/blog/"]::after,
 .page-contact .nav-links a[href="contact.html"]::after,
 .page-about .nav-links a[href="about.html"]::after {
   width: 100%;
@@ -428,4 +431,50 @@ i {
   color: #9aa7b2;
   line-height: 1.6;
   max-width: 800px;
+}
+/* NOTES / BLOG LANDING */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.notes-card {
+  background: #0f141b;
+  border: 1px solid #1f2933;
+  padding: 22px;
+  border-radius: 6px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.notes-card h3 {
+  color: #b2ffcc;
+  margin-bottom: 8px;
+}
+
+.notes-card p {
+  color: #9aa7b2;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.notes-meta {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.notes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(0, 255, 106, 0.12);
+}
+.page ul li a {
+  color: #b0bec5;
+  text-decoration: none;
+}
+
+.page ul li a:hover {
+  color: #00ff6a;
 }
