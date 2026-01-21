@@ -9,8 +9,28 @@
   <meta name="description" content="The page you are looking for does not exist. Navigate back to Aman Sharma’s portfolio to explore the learning journey and domains.">
   <meta name="robots" content="noindex, follow">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem("theme");
+        const light =
+          t === "light" ||
+          (!t &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (light) document.documentElement.setAttribute("data-theme", "light");
+      } catch {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
@@ -42,24 +62,30 @@
 
 <main class="page">
 
-  <h1 style="font-size: 64px; color: #00ff6a;">404</h1>
+  <h1 class="error-code">404</h1>
 
-  <p style="margin-top: 20px; font-size: 18px; color: #b0bec5;">
+  <p class="error-lead">
     The page you’re trying to access doesn’t exist or has been moved.
   </p>
 
-  <p style="margin-top: 10px; color: #9aa7b2;">
+  <p class="error-sub">
     This usually happens when old links are removed as the site evolves.
   </p>
 
-  <div class="hero-buttons" style="margin-top: 40px;">
+  <div class="hero-buttons error-actions">
     <a href="index.html" class="btn">Go Home</a>
     <a href="journey.html" class="btn outline">Learning Journey</a>
   </div>
 
 </main>
 
-<script src="js/main.js"></script>
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
 
 </body>
 </html>

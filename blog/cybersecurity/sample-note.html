@@ -22,7 +22,16 @@
 
   <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="alternate" type="application/rss+xml" title="Aman Sharma — Notes" href="/rss.xml">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico">
   <link rel="stylesheet" href="../../css/style.css">
   <!-- Google tag (gtag.js) -->
@@ -55,6 +64,16 @@
 
 <main class="page post-page">
 
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <a href="/blog/">Notes</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <a href="/blog/cybersecurity/">Cybersecurity</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page">Post Title</span>
+  </nav>
+
 <article class="post">
 
   <!-- POST HEADER -->
@@ -67,6 +86,8 @@
       <span class="post-domain">Cybersecurity</span>
       <span>•</span>
       <span class="post-date">YYYY-MM-DD</span>
+      <span>•</span>
+      <span class="post-reading-time" aria-label="Reading time"></span>
     </div>
   </header>
 
@@ -112,6 +133,66 @@
 
 </main>
 
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
 <script src="../../js/main.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thisamansharma.is-a.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://thisamansharma.is-a.dev/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cybersecurity",
+      "item": "https://thisamansharma.is-a.dev/blog/cybersecurity/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Post Title",
+      "item": "https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Post Title Goes Here",
+  "description": "Technical notes, tutorials, and essays by Aman Sharma on cybersecurity, programming, systems, and networking.",
+  "image": "https://thisamansharma.is-a.dev/assets/og/og-post.png",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "author": {
+    "@type": "Person",
+    "name": "Aman Sharma",
+    "url": "https://thisamansharma.is-a.dev/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html"
+  }
+}
+</script>
 </body>
 </html>

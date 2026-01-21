@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Contact | Aman Sharma</title>
   <meta name="description" content="Contact Aman Sharma for academic, technical, or collaboration opportunities.">
   <meta property="og:title" content="Aman Sharma | Computer Science Portfolio">
@@ -22,6 +21,27 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem("theme");
+        const light =
+          t === "light" ||
+          (!t &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (light) document.documentElement.setAttribute("data-theme", "light");
+      } catch {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
@@ -34,7 +54,6 @@
 </script>
 </head>
 <body class="page-contact">
-
 <header>
   <nav class="navbar">
   <div class="logo"><i class="fa-solid fa-terminal"></i> Aman<span>.</span></div>
@@ -62,13 +81,66 @@
     and cybersecurity-related discussions.
   </p>
 
-<p><i class="fa-solid fa-envelope"></i> Email: <strong>AmanSharma1@duck.com</strong></p>
-<p><i class="fa-brands fa-github"></i> GitHub: <strong>https://github.com/A-man-Sharma-04</strong></p>
-<p><i class="fa-brands fa-linkedin"></i> LinkedIn: <strong>https://linkedin.com/in/aman-sharma-75bb76266/</strong></p>
-<p><i class="fa-brands fa-twitter"></i> Twitter: <strong>https://twitter.com/A_man_04_</strong></p>
+  <section class="contact-methods" aria-label="Contact methods">
+    <a class="contact-card" href="mailto:AmanSharma1@duck.com">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-hint">AmanSharma1@duck.com</div>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://github.com/A-man-Sharma-04" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-hint">@A-man-Sharma-04</div>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://www.linkedin.com/in/a-man-sharma" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-hint">/in/a-man-sharma</div>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://twitter.com/A_man_04_" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+      <div>
+        <div class="contact-label">X (Twitter)</div>
+        <div class="contact-hint">@A_man_04_</div>
+      </div>
+    </a>
+  </section>
 </main>
 
-<script src="js/main.js"></script>
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Aman Sharma",
+    "email": "AmanSharma1@duck.com",
+    "url": "https://thisamansharma.is-a.dev",
+    "sameAs": [
+      "https://github.com/A-man-Sharma-04",
+      "https://www.linkedin.com/in/a-man-sharma",
+      "https://twitter.com/A_man_04_"
+    ]
+  }
+}
+</script>
+
+<script src="js/main.js" defer></script>
 
 </body>
 </html>

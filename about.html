@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Aman Sharma</title>
   <meta name="description" content="About Aman Sharma, a computer science undergraduate focused on building strong fundamentals across systems, programming, and cybersecurity.">
@@ -18,8 +24,22 @@
   <meta name="twitter:image" content="https://thisamansharma.is-a.dev/assets/og/og.png">
   <meta name="twitter:image:alt" content="Aman Sharma — CS • Systems • Security • Software Engineering">
   <link rel="canonical" href="https://thisamansharma.is-a.dev/about.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem("theme");
+        const light =
+          t === "light" ||
+          (!t &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (light) document.documentElement.setAttribute("data-theme", "light");
+      } catch {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
@@ -83,6 +103,27 @@
   </section>
 </main>
 
-<script src="js/main.js"></script>
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aman Sharma",
+  "url": "https://thisamansharma.is-a.dev",
+  "sameAs": [
+    "https://github.com/A-man-Sharma-04",
+    "https://www.linkedin.com/in/a-man-sharma"
+  ],
+  "jobTitle": "Computer Science Undergraduate",
+  "description": "Computer Science undergraduate focused on building strong fundamentals across systems, programming, and cybersecurity."
+}
+</script>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aman Sharma — Notes</title>
+    <link>https://thisamansharma.is-a.dev/blog/</link>
+    <description>Technical notes and learning logs across cybersecurity, programming, systems, and networking.</description>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://thisamansharma.is-a.dev/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Sample Note (Template)</title>
+      <link>https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html</link>
+      <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html</guid>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
+      <description>A reusable post template for future cybersecurity notes.</description>
+    </item>
+  </channel>
+</rss>

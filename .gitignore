@@ -1,0 +1,13 @@
+# VS Code / editor settings
+.vscode/
+
+# Local tooling scripts (optional for deployment)
+tools/
+
+# OS / misc
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log

@@ -22,9 +22,21 @@
 
   <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="alternate" type="application/rss+xml" title="Aman Sharma — Notes" href="/rss.xml">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preload" as="style" href="../css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/style.css"></noscript>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
 <script>
@@ -57,6 +69,12 @@
 
   <h1>Notes</h1>
 
+  <div class="blog-search" data-mode="posts" data-posts-index="posts.json" role="search" aria-label="Search notes">
+    <label class="blog-search-label" for="blog-search">Search notes</label>
+    <input class="blog-search-input" id="blog-search" type="search" placeholder="Search posts (title, tags, category)…" autocomplete="off">
+    <div class="blog-search-results" aria-live="polite"></div>
+  </div>
+
   <p class="about-intro">
     This section contains structured notes and observations from my learning journey.
     The goal is to document understanding, experiments, and insights while exploring
@@ -65,34 +83,33 @@
 
   <section class="notes-grid">
 
-    <div class="notes-card">
+    <a class="notes-card" href="cybersecurity/">
       <h3>Cybersecurity</h3>
       <p>Security concepts, tools, and observations while exploring systems and networks.</p>
-      <span class="notes-meta">Notes coming soon</span>
-    </div>
+      <span class="notes-meta">Browse notes</span>
+    </a>
 
-    <div class="notes-card">
+    <a class="notes-card" href="programming/">
       <h3>Programming</h3>
       <p>Thoughts and learnings around programming fundamentals and problem solving.</p>
-      <span class="notes-meta">Notes coming soon</span>
-    </div>
+      <span class="notes-meta">Browse notes</span>
+    </a>
 
-    <div class="notes-card">
+    <a class="notes-card" href="systems/">
       <h3>Linux & Systems</h3>
       <p>Notes related to operating systems, Linux internals, and system behavior.</p>
-      <span class="notes-meta">Notes coming soon</span>
-    </div>
+      <span class="notes-meta">Browse notes</span>
+    </a>
 
-    <div class="notes-card">
+    <a class="notes-card" href="networking/">
       <h3>Networking</h3>
       <p>Understanding how networks work through protocols, packets, and experiments.</p>
-      <span class="notes-meta">Notes coming soon</span>
-    </div>
+      <span class="notes-meta">Browse notes</span>
+    </a>
 
   </section>
 
-</main>
-<section class="page">
+  <section class="page">
   <h3>How These Notes Fit In</h3>
 
   <p>
@@ -100,8 +117,33 @@
     domain explorations showcased on this site. Each note reflects
     practical understanding rather than polished tutorials.
   </p>
-</section>
 
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Notes",
+  "description": "Technical notes and learning logs by Aman Sharma across cybersecurity, programming, systems, and networking.",
+  "url": "https://thisamansharma.is-a.dev/blog/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Aman Sharma",
+    "url": "https://thisamansharma.is-a.dev/"
+  }
+}
+</script>
+
+<script src="posts-index.js" defer></script>
 <script src="../js/main.js" defer></script>
 </body>
 </html>

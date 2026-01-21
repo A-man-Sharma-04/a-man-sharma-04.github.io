@@ -18,8 +18,28 @@
   <meta name="twitter:image" content="https://thisamansharma.is-a.dev/assets/og/og.png">
   <meta name="twitter:image:alt" content="Aman Sharma — CS • Systems • Security • Software Engineering">
   <link rel="canonical" href="https://thisamansharma.is-a.dev/journey.html">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem("theme");
+        const light =
+          t === "light" ||
+          (!t &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (light) document.documentElement.setAttribute("data-theme", "light");
+      } catch {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
@@ -96,9 +116,9 @@
     </div>
 
   </div>
-
 </main>
-<section class="page">
+
+<section class="page page-related-notes">
   <h3>Related Notes</h3>
 
   <p>
@@ -113,6 +133,27 @@
   </ul>
 </section>
 
-<script src="js/main.js"></script>
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Learning Journey",
+  "description": "A structured view of Aman Sharma’s learning journey across programming, cybersecurity, networking, systems, and problem solving.",
+  "url": "https://thisamansharma.is-a.dev/journey.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Aman Sharma",
+    "url": "https://thisamansharma.is-a.dev/"
+  }
+}
+</script>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

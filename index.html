@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aman Sharma | Home</title>
   <meta name="description" content="Personal portfolio of Aman Sharma, a computer science undergraduate exploring programming, cybersecurity, systems, and software engineering through continuous learning.">
@@ -24,6 +30,19 @@
   <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem("theme");
+        const light =
+          t === "light" ||
+          (!t &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (light) document.documentElement.setAttribute("data-theme", "light");
+      } catch {}
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
@@ -36,6 +55,11 @@
 </script>
 </head>
 <body class="page-home">
+
+<div class="sky" aria-hidden="true">
+  <div class="sky-stars"></div>
+  <div class="sky-meteors" data-sky-meteors></div>
+</div>
 
 <header>
   <nav class="navbar">
@@ -60,18 +84,53 @@
 <main>
 
 <section class="hero-intro">
-  <h1 class="hero-title">Aman Sharma</h1>
+  <div class="hero-layout">
+    <div class="hero-copy">
+      <h1 class="hero-title">Aman Sharma</h1>
 
-  <p class="hero-subtitle">
-    Computer Science undergraduate exploring systems, security, and software engineering
-    with a focus on strong fundamentals and continuous learning.
-  </p>
+      <p class="hero-subtitle">
+        Computer Science undergraduate exploring systems, security, and software engineering
+        with a focus on strong fundamentals and continuous learning.
+      </p>
 
-  <div class="hero-buttons">
-    <a href="journey.html" class="btn">Learning Journey</a>
-    <a href="domain-cyber.html" class="btn outline">Cybersecurity</a>
-    <a href="https://github.com/A-man-Sharma-04" class="btn outline" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://linkedin.com/in/aman-sharma-75bb76266/" class="btn outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="hero-buttons">
+        <a href="journey.html" class="btn">Learning Journey</a>
+        <a href="domain-cyber.html" class="btn outline">Cybersecurity</a>
+        <a href="https://github.com/A-man-Sharma-04" class="btn outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/a-man-sharma" class="btn outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+
+    <aside class="hero-visual" aria-label="Interactive terminal">
+      <div class="terminal-card" data-interactive-terminal>
+        <div class="terminal-head">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+          <span class="terminal-title">~/learning</span>
+        </div>
+
+        <div class="terminal-body">
+          <div class="terminal-output" role="log" aria-live="polite"></div>
+
+          <div class="terminal-prompt" aria-label="Terminal prompt">
+            <span class="t-dim">$</span>
+            <input
+              class="terminal-input"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Terminal command"
+              placeholder="Type a command…"
+            />
+          </div>
+
+          <div class="terminal-hint t-dim">Try: whoami, pwd, help, clear</div>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -81,7 +140,7 @@
     <i class="fa-brands fa-github"></i>
   </a>
 
-  <a href="https://linkedin.com/in/aman-sharma-75bb76266/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+  <a href="https://www.linkedin.com/in/a-man-sharma" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
     <i class="fa-brands fa-linkedin"></i>
   </a>
 
@@ -93,6 +152,34 @@
 
 </main>
 
-<script src="js/main.js"></script>
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aman Sharma",
+  "url": "https://thisamansharma.is-a.dev",
+  "sameAs": [
+    "https://github.com/A-man-Sharma-04",
+    "https://www.linkedin.com/in/a-man-sharma"
+  ],
+  "jobTitle": "Computer Science Undergraduate",
+  "description": "Computer Science undergraduate exploring systems, security, and software engineering with a focus on strong fundamentals and continuous learning.",
+  "knowsAbout": [
+    "Cybersecurity",
+    "Programming",
+    "Networking",
+    "Systems",
+    "Software Engineering"
+  ]
+}
+</script>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>
