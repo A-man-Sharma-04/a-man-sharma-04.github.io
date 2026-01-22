@@ -4,10 +4,6 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  <link rel="dns-prefetch" href="//www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Aman Sharma</title>
   <meta name="description" content="About Aman Sharma, a computer science undergraduate focused on building strong fundamentals across systems, programming, and cybersecurity.">
@@ -40,16 +36,15 @@
       } catch {}
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-163MTRBJF3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <style>
+    html { background: #0b0f14; }
+    html[data-theme="light"] { background: #f6f8fa; }
+    body { margin: 0; background: #0b0f14; color: #e5e5e5; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  </style>
+  <link rel="preload" as="style" href="css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
-  gtag('config', 'G-163MTRBJF3');
-</script>
+  <meta name="kmb-ga-id" content="G-163MTRBJF3">
 </head>
 <body class="page-about">
 
@@ -74,31 +69,40 @@
   <h1>About Me</h1>
 
   <p class="about-intro">
-    I am a Computer Science undergraduate with a strong curiosity for understanding
-    how computing systems work beneath the surface.
+    I’m a Computer Science undergraduate who enjoys going one level deeper — understanding how systems behave,
+    why software works, and what breaks when assumptions change.
   </p>
 
   <section class="about-block">
     <h3>How I Approach Learning</h3>
     <p>
-      Rather than focusing on a single role or technology, I aim to build strong
-      fundamentals across core computer science domains.
+      I don’t try to memorize tools. I try to build fundamentals.
+      I learn best by reading, building small projects, experimenting, and writing notes so the ideas stick.
     </p>
   </section>
 
   <section class="about-block">
     <h3>Why Cybersecurity Interested Me</h3>
     <p>
-      Cybersecurity emerged as a natural extension of my curiosity, helping me understand
-      systems, networks, and software behavior from a deeper perspective.
+      Cybersecurity pushed me to think more clearly about real-world behavior: boundaries, threat models,
+      and how design choices show up as vulnerabilities.
+      It also connects naturally with systems, networking, and software engineering.
+    </p>
+  </section>
+
+  <section class="about-block">
+    <h3>What I’m Doing Now</h3>
+    <p>
+      Improving my core CS foundation (operating systems, networking, and programming fundamentals),
+      while writing structured notes and building small experiments to validate what I learn.
     </p>
   </section>
 
   <section class="about-block">
     <h3>Long-Term Perspective</h3>
     <p>
-      I view cybersecurity as a lens rather than a destination, keeping myself open
-      to software engineering, systems roles, and research-oriented paths.
+      I view cybersecurity as a lens rather than a destination.
+      I’m open to software engineering, systems roles, and research-oriented paths where fundamentals matter.
     </p>
   </section>
 </main>

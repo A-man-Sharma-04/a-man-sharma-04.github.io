@@ -1,5 +1,42 @@
 // Theme (dark/light)
 (() => {
+  // Optional: defer Google Analytics to improve Lighthouse (reduces early 3rd-party and main-thread work).
+  const maybeLoadDeferredAnalytics = () => {
+    const meta = document.querySelector('meta[name="kmb-ga-id"]');
+    const id = meta?.getAttribute("content")?.trim();
+    if (!id) return;
+
+    // Respect Do Not Track.
+    const dnt =
+      navigator.doNotTrack === "1" ||
+      window.doNotTrack === "1" ||
+      navigator.msDoNotTrack === "1";
+    if (dnt) return;
+
+    const load = () => {
+      if (window.gtag || document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${id}"]`)) return;
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+
+      window.gtag("js", new Date());
+      window.gtag("config", id);
+
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+      document.head.appendChild(s);
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(load, { timeout: 3000 });
+    } else {
+      window.setTimeout(load, 1800);
+    }
+  };
+
   const storageKey = "theme";
   const root = document.documentElement;
   const mediaQuery = "(prefers-color-scheme: light)";
@@ -77,6 +114,8 @@
         if (menuToggleEl) {
           menuToggleEl.setAttribute("aria-expanded", "false");
         }
+
+        maybeLoadDeferredAnalytics();
       }
     };
 
@@ -556,6 +595,16 @@ if (toggle && navLinks) {
     // Allow absolute URLs, otherwise treat as site-relative.
     const isAbsolute = /^https?:\/\//i.test(raw);
     const target = isAbsolute ? raw : `/${raw.replace(/^\.?\//, "")}`;
+
+    if (isAbsolute) {
+      const opened = window.open(target, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        // Pop-up blocked: keep the current site tab intact.
+        printLine("Pop-up blocked by the browser. Allow pop-ups for this site to open external links.");
+      }
+      return true;
+    }
+
     window.location.href = target;
     return true;
   };
@@ -603,7 +652,7 @@ if (toggle && navLinks) {
         "  date            → prints the current date/time",
         "  ls              → lists useful site paths",
         "  links           → prints social/contact links",
-        "  open <target>   → opens a page or URL (e.g. open blog, open journey)",
+        "  open <target>   → opens a page or URL (e.g. open blog, open about, open youtube.com)",
         "  echo <text>     → prints text",
       ]);
       return;
@@ -652,9 +701,10 @@ if (toggle && navLinks) {
     }
 
     if (command === "open") {
-      const target = String(args[0] || "").toLowerCase();
+      const rawArg = String(args[0] ?? "").trim();
+      const target = rawArg.toLowerCase();
       if (!target) {
-        printLine("Usage: open <blog|journey|about|contact|cyber|networking|programming|/path|https://...>");
+        printLine("Usage: open <blog|blogs|journey|about|contact|cyber|networking|programming|/path|https://...|youtube.com>");
         return;
       }
 
@@ -662,6 +712,7 @@ if (toggle && navLinks) {
         home: "/",
         journey: "/journey.html",
         blog: "/blog/",
+        blogs: "/blog/",
         notes: "/blog/",
         about: "/about.html",
         contact: "/contact.html",
@@ -671,10 +722,91 @@ if (toggle && navLinks) {
         network: "/domain-networking.html",
         programming: "/domain-programming.html",
         code: "/domain-programming.html",
+        "domain-cyber": "/domain-cyber.html",
+        "domain-networking": "/domain-networking.html",
+        "domain-programming": "/domain-programming.html",
       };
 
-      const resolved = shortcutMap[target] || args[0];
-      openUrl(resolved);
+      const isAbsoluteUrl = /^https?:\/\//i.test(rawArg);
+      const isProtocolRelative = rawArg.startsWith("//");
+      const isPath = rawArg.startsWith("/") || rawArg.startsWith("./") || rawArg.startsWith("../");
+
+      const looksLikeDomain = (() => {
+        if (isAbsoluteUrl || isProtocolRelative || isPath) return false;
+        if (!rawArg.includes(".")) return false;
+        if (/\s/.test(rawArg)) return false;
+        // Rough domain check: labels separated by dots; optional path/query/fragment.
+        return /^[a-z0-9-]+(\.[a-z0-9-]+)+(?:[:\/\?#].*)?$/i.test(rawArg);
+      })();
+
+      const resolvedShortcut = shortcutMap[target] || (target.endsWith("s") ? shortcutMap[target.slice(0, -1)] : undefined);
+      if (resolvedShortcut) {
+        openUrl(resolvedShortcut);
+        return;
+      }
+
+      if (looksLikeDomain) {
+        openUrl(`https://${rawArg}`);
+        return;
+      }
+
+      if (isProtocolRelative) {
+        openUrl(`https:${rawArg}`);
+        return;
+      }
+
+      if (isAbsoluteUrl) {
+        openUrl(rawArg);
+        return;
+      }
+
+      if (isPath) {
+        const protocol = String(window.location.protocol || "");
+        if (protocol === "file:") {
+          openUrl(rawArg);
+          return;
+        }
+
+        (async () => {
+          try {
+            const res = await fetch(rawArg, { method: "GET", cache: "no-store" });
+            if (res.ok) {
+              openUrl(rawArg);
+              return;
+            }
+          } catch {}
+
+          printLine(`Unknown target: ${rawArg}. Opening 404 page.`);
+          openUrl("/404.html");
+        })();
+        return;
+      }
+
+      // Heuristic: try common internal routes for barewords before falling back.
+      const protocol = String(window.location.protocol || "");
+      const candidates = [`/${target}.html`, `/${target}/`];
+
+      if (protocol !== "file:") {
+        (async () => {
+          for (const c of candidates) {
+            try {
+              const res = await fetch(c, { method: "GET", cache: "no-store" });
+              if (res.ok) {
+                openUrl(c);
+                return;
+              }
+            } catch {}
+          }
+
+          printLine(`Unknown target: ${rawArg}. Opening 404 page.`);
+          openUrl("/404.html");
+        })();
+        return;
+      }
+
+      // file:// mode: no reliable fetch; fall back to 404 instead of navigating to a broken absolute path.
+      printLine(`Unknown target: ${rawArg}. Opening 404 page.`);
+      openUrl("/404.html");
       return;
     }
 

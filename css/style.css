@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+/* Improve perceived performance: avoid FOIT for Font Awesome webfonts */
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2") format("woff2");
+}
+
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -63,6 +80,37 @@ body {
   font-weight: 400;
   display: flex;
   flex-direction: column;
+}
+
+/* Selection styling + prevent accidental selection on UI chrome */
+::selection {
+  background: rgba(var(--accent-rgb), 0.28);
+  color: var(--text);
+}
+
+::-moz-selection {
+  background: rgba(var(--accent-rgb), 0.28);
+  color: var(--text);
+}
+
+.navbar,
+.nav-links,
+.menu-toggle,
+.logo,
+.theme-toggle,
+.notes-card,
+.contact-card,
+.terminal-card,
+.back-to-top {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+.terminal-input {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 /* Landing page background (stars/meteors) */
@@ -488,6 +536,26 @@ main {
     display: none;
     padding: 15px;
     z-index: 1000;
+  }
+
+  /* Make each nav item a full-width tap target (mobile) */
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 10px;
+  }
+
+  .nav-links a::after {
+    bottom: 6px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(var(--accent-rgb), 0.08);
   }
 
   .nav-links.show {
