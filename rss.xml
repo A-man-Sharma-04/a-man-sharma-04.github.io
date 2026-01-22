@@ -5,8 +5,16 @@
     <link>https://thisamansharma.is-a.dev/blog/</link>
     <description>Technical notes and learning logs across cybersecurity, programming, systems, and networking.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thisamansharma.is-a.dev/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>What I Learned While Exploring Kali Linux as a Beginner</title>
+      <link>https://thisamansharma.is-a.dev/blog/cybersecurity/kali-linux-beginner.html</link>
+      <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/cybersecurity/kali-linux-beginner.html</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 GMT</pubDate>
+      <description>A calm, reflective learning note on exploring Kali Linux as a beginner—purpose, mindset shifts, and foundational lessons.</description>
+    </item>
 
     <item>
       <title>Sample Note (Template)</title>

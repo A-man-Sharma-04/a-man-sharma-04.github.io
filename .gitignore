@@ -11,3 +11,6 @@ Desktop.ini
 
 # Logs
 *.log
+
+# Unused legacy bundle (About now uses css/style.min.css)
+css/about.min.css
