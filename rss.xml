@@ -8,20 +8,21 @@
     <lastBuildDate>Thu, 22 Jan 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thisamansharma.is-a.dev/rss.xml" rel="self" type="application/rss+xml" />
 
+    <!-- KMB:RSS-ITEMS-START (generated from blog/posts.json) -->
     <item>
       <title>What I Learned While Exploring Kali Linux as a Beginner</title>
       <link>https://thisamansharma.is-a.dev/blog/cybersecurity/kali-linux-beginner.html</link>
       <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/cybersecurity/kali-linux-beginner.html</guid>
       <pubDate>Thu, 22 Jan 2026 00:00:00 GMT</pubDate>
       <description>A calm, reflective learning note on exploring Kali Linux as a beginner—purpose, mindset shifts, and foundational lessons.</description>
+      <category>Cybersecurity</category>
+      <category>kali linux</category>
+      <category>linux</category>
+      <category>beginner</category>
+      <category>learning note</category>
+      <category>fundamentals</category>
+      <category>mindset</category>
     </item>
-
-    <item>
-      <title>Sample Note (Template)</title>
-      <link>https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html</link>
-      <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/cybersecurity/sample-note.html</guid>
-      <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
-      <description>A reusable post template for future cybersecurity notes.</description>
-    </item>
+<!-- KMB:RSS-ITEMS-END -->
   </channel>
 </rss>

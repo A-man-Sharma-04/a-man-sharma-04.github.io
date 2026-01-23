@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /blog/search.html
 Sitemap: https://thisamansharma.is-a.dev/sitemap.xml

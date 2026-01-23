@@ -8,15 +8,5 @@
     "tags": ["kali linux", "linux", "beginner", "learning note", "fundamentals", "mindset"],
     "datePublished": "2026-01-22",
     "dateModified": "2026-01-22"
-  },
-  {
-    "title": "Sample Note (Template)",
-    "description": "A reusable post template for future cybersecurity notes.",
-    "category": "Cybersecurity",
-    "categoryPath": "/blog/cybersecurity/",
-    "url": "/blog/cybersecurity/sample-note.html",
-    "tags": ["template"],
-    "datePublished": "2026-01-20",
-    "dateModified": "2026-01-20"
   }
 ]

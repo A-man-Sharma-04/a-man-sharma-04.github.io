@@ -443,6 +443,164 @@ if (toggle && navLinks) {
   });
 })();
 
+// Related notes (post pages)
+(() => {
+  let host = document.querySelector(".post-related");
+
+  // Future-proof: automatically add the container on any post page.
+  const isPostPage = document.body?.classList?.contains("page-post");
+  if (!host && !isPostPage) return;
+
+  if (!host) {
+    host = document.createElement("section");
+    host.className = "post-related";
+    host.setAttribute("aria-label", "Related notes");
+    host.dataset.postsIndex = "/blog/posts.json";
+    host.dataset.max = "3";
+
+    const article = document.querySelector("article.post") || document.querySelector(".post");
+    if (article) {
+      article.appendChild(host);
+    } else {
+      const main = document.querySelector("main") || document.body;
+      main.appendChild(host);
+    }
+  }
+
+  const postsIndexUrl = host.dataset.postsIndex || "/blog/posts.json";
+  const currentUrl = (host.dataset.currentUrl || window.location.pathname || "").replace(/\/$/, "");
+  const max = Math.max(1, Math.min(6, Number.parseInt(host.dataset.max || "3", 10) || 3));
+
+  const normalize = (value) => String(value || "").toLowerCase().trim();
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  const getFallbackPostsIndex = () => {
+    const fallback = window.__KMB_POSTS_INDEX__;
+    return Array.isArray(fallback) ? fallback : [];
+  };
+
+  const loadPostsIndex = async (url) => {
+    if (!url) return getFallbackPostsIndex();
+
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) return getFallbackPostsIndex();
+      const json = await res.json();
+      return Array.isArray(json) ? json : getFallbackPostsIndex();
+    } catch {
+      return getFallbackPostsIndex();
+    }
+  };
+
+  const parseDate = (value) => {
+    const t = Date.parse(String(value || ""));
+    return Number.isFinite(t) ? t : 0;
+  };
+
+  const getRelatedSignals = (candidate, current) => {
+    const catA = normalize(candidate.category);
+    const catB = normalize(current.category);
+    const sameCategory = Boolean(catA && catB && catA === catB);
+
+    const tagsA = new Set((candidate.tags || []).map(normalize).filter(Boolean));
+    const tagsB = new Set((current.tags || []).map(normalize).filter(Boolean));
+
+    let tagOverlap = 0;
+    tagsA.forEach((t) => {
+      if (tagsB.has(t)) tagOverlap += 1;
+    });
+
+    // Keep a score for basic filtering (any relation at all).
+    const score = (sameCategory ? 1 : 0) + tagOverlap;
+    return { score, tagOverlap, sameCategory };
+  };
+
+  const render = async () => {
+    const posts = await loadPostsIndex(postsIndexUrl);
+    const index = Array.isArray(posts) ? posts : [];
+
+    if (!index.length || !currentUrl) {
+      host.style.display = "none";
+      return;
+    }
+
+    const current = index.find((p) => {
+      const u = String(p.url || "").replace(/\/$/, "");
+      return u && u === currentUrl;
+    });
+
+    if (!current) {
+      host.style.display = "none";
+      return;
+    }
+
+    const ranked = index
+      .filter((p) => p && p.url && String(p.url).replace(/\/$/, "") !== currentUrl)
+      .map((p) => {
+        const signals = getRelatedSignals(p, current);
+        return {
+          post: p,
+          signals,
+          date: parseDate(p.dateModified || p.datePublished),
+        };
+      })
+      .filter((x) => x.signals.score > 0)
+      .sort((a, b) => {
+        // Prefer posts that share tags first.
+        if (b.signals.tagOverlap !== a.signals.tagOverlap) {
+          return b.signals.tagOverlap - a.signals.tagOverlap;
+        }
+        // Then prefer same-category matches.
+        if (b.signals.sameCategory !== a.signals.sameCategory) {
+          return b.signals.sameCategory ? 1 : -1;
+        }
+        if (b.date !== a.date) return b.date - a.date;
+        return String(a.post.title || "").localeCompare(String(b.post.title || ""), undefined, {
+          sensitivity: "base",
+        });
+      })
+      .slice(0, max)
+      .map((x) => x.post);
+
+    if (!ranked.length) {
+      host.style.display = "none";
+      return;
+    }
+
+    const cards = ranked
+      .map((p) => {
+        const title = escapeHtml(p.title || "Untitled");
+        const desc = escapeHtml(p.description || "");
+        const url = escapeHtml(p.url || "#");
+        const meta = escapeHtml(p.category || "");
+
+        return `
+          <a class="notes-card" href="${url}">
+            <h2>${title}</h2>
+            ${desc ? `<p>${desc}</p>` : ""}
+            ${meta ? `<span class="notes-meta">${meta}</span>` : ""}
+          </a>
+        `;
+      })
+      .join("");
+
+    host.innerHTML = `<h2>Related notes</h2><div class="notes-grid">${cards}</div>`;
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
+  } else {
+    render();
+  }
+})();
+
 // Back to top
 (() => {
   if (document.querySelector(".back-to-top")) return;

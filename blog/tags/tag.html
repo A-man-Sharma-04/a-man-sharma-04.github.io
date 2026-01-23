@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Programming Notes | Aman Sharma</title>
-  <meta name="description" content="Programming notes by Aman Sharma: fundamentals, problem solving, and how software works.">
+  <title>Tag | Aman Sharma</title>
+  <meta name="description" content="Notes tagged with a keyword by Aman Sharma.">
 
-  <meta property="og:title" content="Programming Notes | Aman Sharma">
-  <meta property="og:description" content="Programming notes by Aman Sharma: fundamentals, problem solving, and how software works.">
+  <meta property="og:title" content="Tag | Aman Sharma">
+  <meta property="og:description" content="Notes tagged with a keyword by Aman Sharma.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thisamansharma.is-a.dev/blog/programming/">
+  <meta property="og:url" content="https://thisamansharma.is-a.dev/blog/tags/tag.html">
   <meta property="og:site_name" content="Aman Sharma">
   <meta property="og:image" content="https://thisamansharma.is-a.dev/assets/og/og-blog.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Notes — Aman Sharma">
+  <meta property="og:image:alt" content="Tag — Aman Sharma">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://thisamansharma.is-a.dev/assets/og/og-blog.png">
-  <meta name="twitter:image:alt" content="Notes — Aman Sharma">
+  <meta name="twitter:image:alt" content="Tag — Aman Sharma">
 
-  <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/programming/">
+  <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/tags/tag.html">
 
   <link rel="alternate" type="application/rss+xml" title="Aman Sharma — Notes" href="/rss.xml">
 
@@ -28,6 +28,7 @@
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
   <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico">
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/blog.css">
@@ -51,30 +52,26 @@
   </nav>
 </header>
 
-<main class="page">
+<main class="page" data-tag-page data-posts-index="../posts.json">
   <nav class="breadcrumbs" aria-label="Breadcrumb">
     <a href="../../index.html">Home</a>
     <span class="crumb-sep" aria-hidden="true">›</span>
     <a href="/blog/">Notes</a>
     <span class="crumb-sep" aria-hidden="true">›</span>
-    <span aria-current="page">Programming</span>
+    <a href="/blog/tags/">Tags</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page" id="tag-breadcrumb">Tag</span>
   </nav>
 
-  <h1>Programming Notes</h1>
-  <p class="about-intro">Notes about fundamentals, debugging, reasoning about code, and building software.</p>
+  <h1 id="tag-title">Tag</h1>
+  <p class="about-intro" id="tag-intro">Notes grouped under this tag.</p>
 
-  <div class="blog-search" data-mode="local" role="search" aria-label="Search this category">
-    <label class="blog-search-label" for="blog-search">Search posts in this category</label>
-    <input class="blog-search-input" id="blog-search" type="search" placeholder="Filter posts…" autocomplete="off">
+  <div class="blog-search" data-mode="local" data-filter-selector=".notes-grid .notes-card" role="search" aria-label="Search notes in this tag">
+    <label class="blog-search-label" for="blog-search">Search notes in this tag</label>
+    <input class="blog-search-input" id="blog-search" type="search" placeholder="Filter notes…" autocomplete="off">
   </div>
 
-  <section class="notes-grid">
-    <div class="notes-card">
-      <h2>Coming soon</h2>
-      <p>I’ll add programming notes here as I write them.</p>
-      <span class="notes-meta">In progress</span>
-    </div>
-  </section>
+  <section class="notes-grid" aria-label="Notes for this tag"></section>
 </main>
 
 <footer class="site-footer">
@@ -103,13 +100,15 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Programming",
-      "item": "https://thisamansharma.is-a.dev/blog/programming/"
+      "name": "Tags",
+      "item": "https://thisamansharma.is-a.dev/blog/tags/"
     }
   ]
 }
 </script>
 
+<script src="../posts-index.js" defer></script>
+<script src="tag-page.js" defer></script>
 <script src="../../js/main.js" defer></script>
 </body>
 </html>

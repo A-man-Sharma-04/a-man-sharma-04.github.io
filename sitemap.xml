@@ -43,7 +43,7 @@
 
   <url>
     <loc>https://thisamansharma.is-a.dev/blog/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-01-22</lastmod>
   </url>
 
   <url>
@@ -67,8 +67,20 @@
   </url>
 
   <url>
+    <loc>https://thisamansharma.is-a.dev/blog/tags/</loc>
+    <lastmod>2026-01-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thisamansharma.is-a.dev/blog/tags/tag.html</loc>
+    <lastmod>2026-01-22</lastmod>
+  </url>
+
+  <!-- KMB:POSTS-START (generated from blog/posts.json) -->
+  <url>
     <loc>https://thisamansharma.is-a.dev/blog/cybersecurity/kali-linux-beginner.html</loc>
     <lastmod>2026-01-22</lastmod>
   </url>
+  <!-- KMB:POSTS-END -->
 
 </urlset>

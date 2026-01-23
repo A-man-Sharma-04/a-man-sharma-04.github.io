@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Programming Notes | Aman Sharma</title>
-  <meta name="description" content="Programming notes by Aman Sharma: fundamentals, problem solving, and how software works.">
+  <title>Search Notes | Aman Sharma</title>
+  <meta name="description" content="Search across all notes by Aman Sharma (title, tags, category).">
+  <meta name="robots" content="noindex,follow">
 
-  <meta property="og:title" content="Programming Notes | Aman Sharma">
-  <meta property="og:description" content="Programming notes by Aman Sharma: fundamentals, problem solving, and how software works.">
+  <meta property="og:title" content="Search Notes | Aman Sharma">
+  <meta property="og:description" content="Search across all notes by Aman Sharma (title, tags, category).">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thisamansharma.is-a.dev/blog/programming/">
+  <meta property="og:url" content="https://thisamansharma.is-a.dev/blog/search.html">
   <meta property="og:site_name" content="Aman Sharma">
   <meta property="og:image" content="https://thisamansharma.is-a.dev/assets/og/og-blog.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Notes — Aman Sharma">
+  <meta property="og:image:alt" content="Notes Search — Aman Sharma">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://thisamansharma.is-a.dev/assets/og/og-blog.png">
-  <meta name="twitter:image:alt" content="Notes — Aman Sharma">
+  <meta name="twitter:image:alt" content="Notes Search — Aman Sharma">
 
-  <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/programming/">
+  <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/search.html">
 
   <link rel="alternate" type="application/rss+xml" title="Aman Sharma — Notes" href="/rss.xml">
 
@@ -28,9 +29,12 @@
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-  <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico">
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/blog.css">
+
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+  <link rel="preload" as="style" href="../css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/style.css"></noscript>
+  <link rel="preload" as="style" href="../css/blog.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/blog.css"></noscript>
   <meta name="kmb-ga-id" content="G-163MTRBJF3">
 </head>
 <body class="page-blog">
@@ -42,39 +46,32 @@
     <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">☰</div>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="../../index.html">Home</a></li>
-      <li><a href="../../journey.html">Journey</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../journey.html">Journey</a></li>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="../../contact.html">Contact</a></li>
-      <li><a href="../../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../about.html">About</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="page">
+<main class="page" data-search-page>
   <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <a href="../../index.html">Home</a>
+    <a href="../index.html">Home</a>
     <span class="crumb-sep" aria-hidden="true">›</span>
     <a href="/blog/">Notes</a>
     <span class="crumb-sep" aria-hidden="true">›</span>
-    <span aria-current="page">Programming</span>
+    <span aria-current="page">Search</span>
   </nav>
 
-  <h1>Programming Notes</h1>
-  <p class="about-intro">Notes about fundamentals, debugging, reasoning about code, and building software.</p>
+  <h1>Search Notes</h1>
+  <p class="about-intro">Search across all notes by title, tag, or category. You can share searches with <code>?q=</code>.</p>
 
-  <div class="blog-search" data-mode="local" role="search" aria-label="Search this category">
-    <label class="blog-search-label" for="blog-search">Search posts in this category</label>
-    <input class="blog-search-input" id="blog-search" type="search" placeholder="Filter posts…" autocomplete="off">
+  <div class="blog-search" data-mode="posts" data-posts-index="/blog/posts.json" role="search" aria-label="Search notes">
+    <label class="blog-search-label" for="blog-search">Search notes</label>
+    <input class="blog-search-input" id="blog-search" type="search" placeholder="Search posts (title, tags, category)…" autocomplete="off">
+    <div class="blog-search-results" aria-live="polite"></div>
   </div>
-
-  <section class="notes-grid">
-    <div class="notes-card">
-      <h2>Coming soon</h2>
-      <p>I’ll add programming notes here as I write them.</p>
-      <span class="notes-meta">In progress</span>
-    </div>
-  </section>
 </main>
 
 <footer class="site-footer">
@@ -103,13 +100,15 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Programming",
-      "item": "https://thisamansharma.is-a.dev/blog/programming/"
+      "name": "Search",
+      "item": "https://thisamansharma.is-a.dev/blog/search.html"
     }
   ]
 }
 </script>
 
-<script src="../../js/main.js" defer></script>
+<script src="posts-index.js" defer></script>
+<script src="search-page.js" defer></script>
+<script src="../js/main.js" defer></script>
 </body>
 </html>

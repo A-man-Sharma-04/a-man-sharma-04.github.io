@@ -179,6 +179,12 @@ main {
   color: var(--accent);
 }
 
+.nav-links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -559,9 +565,14 @@ i {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.journey-node h3 {
+.journey-node h2 {
   color: var(--heading);
   margin-bottom: 8px;
+}
+
+.journey-node:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .journey-node p {
@@ -705,14 +716,15 @@ i {
 
 .breadcrumbs a {
   color: var(--text-muted);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
-  text-decoration-color: rgba(var(--accent-rgb), 0.35);
+  text-decoration: none;
 }
 
 .breadcrumbs a:hover {
   color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: rgba(var(--accent-rgb), 0.35);
 }
 
 .breadcrumbs .crumb-sep {
@@ -734,7 +746,7 @@ i {
 }
 
 .about-block h2,
-.about-block h3 {
+.about-block h2 {
   color: var(--heading);
   margin-bottom: 10px;
 }
@@ -755,25 +767,41 @@ i {
 .error-actions {
   margin-top: 40px;
 }
-.page a:not(.btn) {
+/* Underline inline/content links (but not big UI links like cards/nav). */
+.page p a:not(.btn),
+.page li a:not(.btn),
+.page .about-intro a:not(.btn),
+.page .error-lead a:not(.btn),
+.page .error-sub a:not(.btn) {
   color: var(--text);
-  /* Make links distinguishable without relying only on color */
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.18em;
   text-decoration-color: rgba(var(--accent-rgb), 0.45);
 }
 
-.page a:not(.btn):visited {
+.page p a:not(.btn):visited,
+.page li a:not(.btn):visited,
+.page .about-intro a:not(.btn):visited,
+.page .error-lead a:not(.btn):visited,
+.page .error-sub a:not(.btn):visited {
   color: var(--text);
 }
 
-.page a:not(.btn):hover {
+.page p a:not(.btn):hover,
+.page li a:not(.btn):hover,
+.page .about-intro a:not(.btn):hover,
+.page .error-lead a:not(.btn):hover,
+.page .error-sub a:not(.btn):hover {
   color: var(--accent);
   text-decoration-color: currentColor;
 }
 
-.page a:not(.btn):focus-visible {
+.page p a:not(.btn):focus-visible,
+.page li a:not(.btn):focus-visible,
+.page .about-intro a:not(.btn):focus-visible,
+.page .error-lead a:not(.btn):focus-visible,
+.page .error-sub a:not(.btn):focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
@@ -935,14 +963,24 @@ html[data-theme="light"] .footer-bottom {
 
 .footer-privacy-link {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
+  text-decoration: none;
   font-weight: 600;
 }
 
 .footer-privacy-link:hover {
   color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+
+.footer-privacy-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
 }
 
 .footer-bottom .footer-sep,

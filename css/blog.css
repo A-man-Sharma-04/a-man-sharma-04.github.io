@@ -1,5 +1,5 @@
 /* Blog-only styles (notes listing, search UI, and post template)
-   Depends on shared variables/layout in css/style.min.css */
+  Depends on shared variables/layout in css/style.css */
 
 /* ACTIVE NAV LINK (Blog) */
 .page-blog .nav-links a[href="/blog/"] {
@@ -306,6 +306,22 @@ html[data-theme="light"] .post-content pre {
   height: 1px;
   background: var(--border);
   margin: 24px 0;
+}
+
+/* Related notes block (rendered by JS on post pages) */
+.post-related {
+  margin-top: 38px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.post-related h2 {
+  margin: 0 0 14px;
+  color: var(--heading);
+}
+
+.post-related .notes-grid {
+  margin-top: 14px;
 }
 
 /* Mobile blog post */

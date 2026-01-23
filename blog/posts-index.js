@@ -2,13 +2,14 @@
 // Keep this in sync with blog/posts.json.
 window.__KMB_POSTS_INDEX__ = [
   {
-    title: "Sample Note (Template)",
-    description: "A reusable post template for future cybersecurity notes.",
+    title: "What I Learned While Exploring Kali Linux as a Beginner",
+    description:
+      "A calm, reflective learning note on exploring Kali Linux as a beginner—purpose, mindset shifts, and foundational lessons.",
     category: "Cybersecurity",
     categoryPath: "/blog/cybersecurity/",
-    url: "/blog/cybersecurity/sample-note.html",
-    tags: ["template"],
-    datePublished: "2026-01-20",
-    dateModified: "2026-01-20",
+    url: "/blog/cybersecurity/kali-linux-beginner.html",
+    tags: ["kali linux", "linux", "beginner", "learning note", "fundamentals", "mindset"],
+    datePublished: "2026-01-22",
+    dateModified: "2026-01-22",
   },
 ];
