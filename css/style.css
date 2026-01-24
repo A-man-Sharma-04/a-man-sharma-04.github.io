@@ -154,6 +154,12 @@ main {
   font-size: 24px;
   font-weight: bold;
   color: var(--accent);
+  text-decoration: none;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--accent);
 }
 
 .logo span {
@@ -767,6 +773,20 @@ i {
 .error-actions {
   margin-top: 40px;
 }
+
+/* Remove underlines from specific UI links */
+a.no-underline,
+.no-underline a {
+  text-decoration: none !important;
+}
+
+a.no-underline:hover,
+a.no-underline:focus-visible,
+.no-underline a:hover,
+.no-underline a:focus-visible {
+  text-decoration: none;
+}
+
 /* Underline inline/content links (but not big UI links like cards/nav). */
 .page p a:not(.btn),
 .page li a:not(.btn),
