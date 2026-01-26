@@ -5,10 +5,24 @@
     <link>https://thisamansharma.is-a.dev/blog/</link>
     <description>Technical notes and learning logs across cybersecurity, programming, systems, and networking.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://thisamansharma.is-a.dev/rss.xml" rel="self" type="application/rss+xml" />
 
     <!-- KMB:RSS-ITEMS-START (generated from blog/posts.json) -->
+    <item>
+      <title>What Actually Happens When You Connect to a Wi-Fi Network</title>
+      <link>https://thisamansharma.is-a.dev/blog/networking/wifi-connection-explained.html</link>
+      <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/networking/wifi-connection-explained.html</guid>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+      <description>A clear, beginner-friendly explanation of what happens behind the scenes when a device connects to a Wi-Fi network, focusing on systems and networking fundamentals.</description>
+      <category>Networking</category>
+      <category>wifi</category>
+      <category>networking</category>
+      <category>systems</category>
+      <category>protocols</category>
+      <category>fundamentals</category>
+    </item>
+
     <item>
       <title>What I Learned While Exploring Kali Linux as a Beginner</title>
       <link>https://thisamansharma.is-a.dev/blog/cybersecurity/kali-linux-beginner.html</link>

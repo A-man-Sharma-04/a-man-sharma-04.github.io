@@ -188,6 +188,15 @@
   ensureThemeToggle();
 })();
 
+// Show 'Updated' date only when it differs from published date
+document.querySelectorAll('.post-updated[data-published][data-modified]').forEach(elem => {
+  const published = elem.dataset.published;
+  const modified = elem.dataset.modified;
+  if (published !== modified) {
+    elem.style.display = '';
+  }
+});
+
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
