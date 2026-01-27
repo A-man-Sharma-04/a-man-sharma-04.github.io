@@ -2,6 +2,17 @@
 // Keep this in sync with blog/posts.json.
 window.__KMB_POSTS_INDEX__ = [
   {
+    title: "What Actually Happens When You Connect to a Wi-Fi Network",
+    description:
+      "A clear, beginner-friendly explanation of what happens behind the scenes when a device connects to a Wi-Fi network, focusing on systems and networking fundamentals.",
+    category: "Networking",
+    categoryPath: "/blog/networking/",
+    url: "/blog/networking/wifi-connection-explained.html",
+    tags: ["wifi", "networking", "systems", "protocols", "fundamentals"],
+    datePublished: "2026-01-26",
+    dateModified: "2026-01-26",
+  },
+  {
     title: "What I Learned While Exploring Kali Linux as a Beginner",
     description:
       "A calm, reflective learning note on exploring Kali Linux as a beginner—purpose, mindset shifts, and foundational lessons.",
