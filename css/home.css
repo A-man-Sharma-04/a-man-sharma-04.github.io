@@ -265,6 +265,14 @@ html[data-theme="light"] .terminal-head {
   cursor: text;
 }
 
+@media (min-width: 1000px) {
+  .terminal-output {
+    min-height: 320px;
+    height: 320px;
+    max-height: 320px;
+  }
+}
+
 .terminal-line {
   white-space: pre-wrap;
 }

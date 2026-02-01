@@ -256,6 +256,26 @@ html[data-theme="light"] .post-content code {
   overflow: auto;
 }
 
+.post-content figure {
+  margin: 24px auto;
+  max-width: 900px;
+}
+
+.blog-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 6px;
+}
+
+.post-content figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-subtle);
+  text-align: center;
+}
+
 html[data-theme="light"] .post-content pre {
   background: rgba(15, 23, 42, 0.05);
   border-color: rgba(15, 23, 42, 0.12);

@@ -1,5 +1,15 @@
 [
   {
+    "title": "Understanding User Space and Kernel Space in Simple Terms",
+    "description": "A simple, beginner-friendly explanation of user space vs. kernel space, why the separation exists, and how programs interact with the OS kernel.",
+    "category": "Linux & Systems",
+    "categoryPath": "/blog/systems/",
+    "url": "/blog/systems/user-space-kernel-space.html",
+    "tags": ["user space", "kernel", "operating systems", "systems", "fundamentals"],
+    "datePublished": "2026-02-01",
+    "dateModified": "2026-02-01"
+  },
+  {
     "title": "What Actually Happens When You Connect to a Wi-Fi Network",
     "description": "A clear, beginner-friendly explanation of what happens behind the scenes when a device connects to a Wi-Fi network, focusing on systems and networking fundamentals.",
     "category": "Networking",
