@@ -78,6 +78,11 @@
 
   <!-- KMB:POSTS-START (generated from blog/posts.json) -->
   <url>
+    <loc>https://thisamansharma.is-a.dev/blog/systems/virtual-machines-learning-testing.html</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+
+  <url>
     <loc>https://thisamansharma.is-a.dev/blog/systems/user-space-kernel-space.html</loc>
     <lastmod>2026-02-06</lastmod>
   </url>

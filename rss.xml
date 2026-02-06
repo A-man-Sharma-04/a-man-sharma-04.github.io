@@ -10,6 +10,21 @@
 
     <!-- KMB:RSS-ITEMS-START (generated from blog/posts.json) -->
     <item>
+      <title>Why Virtual Machines Are Used for Learning and Testing</title>
+      <link>https://thisamansharma.is-a.dev/blog/systems/virtual-machines-learning-testing.html</link>
+      <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/systems/virtual-machines-learning-testing.html</guid>
+      <pubDate>Thu, 06 Feb 2026 00:00:00 GMT</pubDate>
+      <description>A beginner-friendly explanation of why virtual machines are ideal for learning, testing, and safe experimentation.</description>
+      <category>Linux &amp; Systems</category>
+      <category>virtual machines</category>
+      <category>virtualization</category>
+      <category>learning</category>
+      <category>testing</category>
+      <category>systems</category>
+      <category>fundamentals</category>
+    </item>
+
+    <item>
       <title>Understanding User Space and Kernel Space in Simple Terms</title>
       <link>https://thisamansharma.is-a.dev/blog/systems/user-space-kernel-space.html</link>
       <guid isPermaLink="true">https://thisamansharma.is-a.dev/blog/systems/user-space-kernel-space.html</guid>
