@@ -481,3 +481,11 @@ html[data-theme="light"] .terminal-head {
   line-height: 1.55;
   color: var(--text-muted-2);
 }
+
+/* Defer below-the-fold rendering on the home page */
+.latest-notes,
+.social-strip,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
+}

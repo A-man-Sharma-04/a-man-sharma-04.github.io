@@ -323,6 +323,14 @@
   color: var(--heading);
 }
 
+/* Defer heavy blog content rendering below the fold */
+.post-content,
+.post-related,
+.notes-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
 .post-content p {
   font-size: 1.08rem;
   line-height: 1.75;
