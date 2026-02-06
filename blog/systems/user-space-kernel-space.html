@@ -97,6 +97,8 @@
     </p>
   </section>
 
+  <div class="ad-slot ad-slot--horizontal" aria-label="Advertisement"></div>
+
   <section class="post-content">
 
     <h2>Introduction</h2>
@@ -122,16 +124,22 @@
     </p>
 
     <figure>
-      <img
-        class="blog-img"
-        src="../../assets/blog/diagrams/user-space-vs-kernel-960.png"
-        srcset="../../assets/blog/diagrams/user-space-vs-kernel-960.png 960w, ../../assets/blog/diagrams/user-space-vs-kernel.png 1536w"
-        sizes="(max-width: 980px) 100vw, 900px"
-        width="960"
-        height="640"
-        loading="lazy"
-        decoding="async"
-        alt="Diagram comparing user space and kernel space">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="../../assets/blog/diagrams/user-space-vs-kernel-960.webp 960w, ../../assets/blog/diagrams/user-space-vs-kernel.webp 1536w"
+          sizes="(max-width: 980px) 100vw, 900px">
+        <img
+          class="blog-img"
+          src="../../assets/blog/diagrams/user-space-vs-kernel-960.png"
+          srcset="../../assets/blog/diagrams/user-space-vs-kernel-960.png 960w, ../../assets/blog/diagrams/user-space-vs-kernel.png 1536w"
+          sizes="(max-width: 980px) 100vw, 900px"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+          alt="Diagram comparing user space and kernel space">
+      </picture>
       <figcaption>User space vs. kernel space: different privileges, different responsibilities.</figcaption>
     </figure>
 
@@ -166,18 +174,26 @@
     </p>
 
     <figure>
-      <img
-        class="blog-img"
-        src="../../assets/blog/diagrams/why-separation-matters-960.png"
-        srcset="../../assets/blog/diagrams/why-separation-matters-960.png 960w, ../../assets/blog/diagrams/why-separation-matters.png 1536w"
-        sizes="(max-width: 980px) 100vw, 900px"
-        width="960"
-        height="640"
-        loading="lazy"
-        decoding="async"
-        alt="Diagram showing how separation improves stability">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="../../assets/blog/diagrams/why-separation-matters-960.webp 960w, ../../assets/blog/diagrams/why-separation-matters.webp 1536w"
+          sizes="(max-width: 980px) 100vw, 900px">
+        <img
+          class="blog-img"
+          src="../../assets/blog/diagrams/why-separation-matters-960.png"
+          srcset="../../assets/blog/diagrams/why-separation-matters-960.png 960w, ../../assets/blog/diagrams/why-separation-matters.png 1536w"
+          sizes="(max-width: 980px) 100vw, 900px"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+          alt="Diagram showing how separation improves stability">
+      </picture>
       <figcaption>Isolation limits the blast radius of failures.</figcaption>
     </figure>
+
+    <div class="ad-slot ad-slot--horizontal" aria-label="Advertisement"></div>
 
     <h2>How Programs Interact with the Kernel</h2>
     <p>
@@ -193,16 +209,22 @@
     </p>
 
     <figure>
-      <img
-        class="blog-img"
-        src="../../assets/blog/diagrams/app-kernel-interaction-960.png"
-        srcset="../../assets/blog/diagrams/app-kernel-interaction-960.png 960w, ../../assets/blog/diagrams/app-kernel-interaction.png 1536w"
-        sizes="(max-width: 980px) 100vw, 900px"
-        width="960"
-        height="640"
-        loading="lazy"
-        decoding="async"
-        alt="Diagram showing application and kernel interaction">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="../../assets/blog/diagrams/app-kernel-interaction-960.webp 960w, ../../assets/blog/diagrams/app-kernel-interaction.webp 1536w"
+          sizes="(max-width: 980px) 100vw, 900px">
+        <img
+          class="blog-img"
+          src="../../assets/blog/diagrams/app-kernel-interaction-960.png"
+          srcset="../../assets/blog/diagrams/app-kernel-interaction-960.png 960w, ../../assets/blog/diagrams/app-kernel-interaction.png 1536w"
+          sizes="(max-width: 980px) 100vw, 900px"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+          alt="Diagram showing application and kernel interaction">
+      </picture>
       <figcaption>Applications ask the kernel to perform privileged operations.</figcaption>
     </figure>
 
@@ -244,6 +266,8 @@
     </p>
 
   </section>
+
+  <div class="ad-slot ad-slot--horizontal" aria-label="Advertisement"></div>
 
   <section class="post-related" aria-label="Related notes" data-posts-index="/blog/posts.json" data-max="3"></section>
 

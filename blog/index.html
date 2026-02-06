@@ -72,6 +72,15 @@
     different areas of computer science.
   </p>
 
+  <section class="blog-latest" aria-label="Latest notes" data-blog-latest data-posts-index="posts.json">
+    <div class="blog-latest-header">
+      <h2>Latest Notes</h2>
+      <a class="blog-latest-link" href="/blog/">View all notes</a>
+    </div>
+
+    <div class="blog-latest-grid" aria-live="polite"></div>
+  </section>
+
   <section class="notes-grid">
 
     <a class="notes-card" href="cybersecurity/">
@@ -112,7 +121,11 @@
   <p>
     These notes are directly connected to the learning journey and
     domain explorations showcased on this site. Each note reflects
-    practical understanding rather than polished tutorials.
+    practical understanding rather than polished tutorials. I write them
+    to capture what I understand in the moment, track progress over time,
+    and make it easier to revisit ideas when I move between topics.
+    Think of them as a living reference: honest snapshots of learning,
+    meant to connect concepts across systems, networking, programming, and security.
   </p>
 
   </section>
@@ -124,6 +137,27 @@
     <p>&copy; 2026 Aman Sharma</p>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thisamansharma.is-a.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://thisamansharma.is-a.dev/blog/"
+    }
+  ]
+}
+</script>
 
 <script type="application/ld+json">
 {

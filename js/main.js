@@ -610,6 +610,233 @@ if (toggle && navLinks) {
   }
 })();
 
+// Latest notes (homepage)
+(() => {
+  const host = document.querySelector("[data-latest-notes]");
+  if (!host) return;
+
+  const grid = host.querySelector(".latest-notes-grid");
+  if (!grid) return;
+
+  const postsIndexUrl = host.getAttribute("data-posts-index") || "/blog/posts.json";
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  const getFallbackPostsIndex = () => {
+    const fallback = window.__KMB_POSTS_INDEX__;
+    return Array.isArray(fallback) ? fallback : [];
+  };
+
+  const loadPostsIndex = async () => {
+    try {
+      const res = await fetch(postsIndexUrl, { cache: "no-store" });
+      if (!res.ok) return getFallbackPostsIndex();
+      const json = await res.json();
+      return Array.isArray(json) ? json : getFallbackPostsIndex();
+    } catch {
+      return getFallbackPostsIndex();
+    }
+  };
+
+  const parseDate = (value) => {
+    const t = Date.parse(String(value || ""));
+    return Number.isFinite(t) ? t : 0;
+  };
+
+  const formatDate = (value) => {
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return "";
+    return d.toLocaleDateString(undefined, {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    });
+  };
+
+  const render = async () => {
+    const posts = await loadPostsIndex();
+    const index = Array.isArray(posts) ? posts : [];
+
+    if (!index.length) {
+      grid.innerHTML = '<div class="blog-search-hint">No notes available yet.</div>';
+      return;
+    }
+
+    const maxCount = window.matchMedia && window.matchMedia("(min-width: 1000px)").matches ? 2 : 3;
+    const latest = index
+      .slice()
+      .sort((a, b) => {
+        const ad = parseDate(a.dateModified || a.datePublished);
+        const bd = parseDate(b.dateModified || b.datePublished);
+        return bd - ad;
+      })
+      .slice(0, maxCount);
+
+    grid.innerHTML = latest
+      .map((p) => {
+        const title = escapeHtml(p.title || "Untitled");
+        const desc = escapeHtml(p.description || "");
+        const category = escapeHtml(p.category || "");
+        const dateValue = p.dateModified || p.datePublished || "";
+        const dateLabel = dateValue ? formatDate(dateValue) : "";
+        const meta = [category, dateLabel].filter(Boolean).join(" · ");
+        const url = escapeHtml(p.url || "#");
+
+        return `
+          <a class="latest-note-card" href="${url}">
+            ${meta ? `<span class="latest-note-meta">${meta}</span>` : ""}
+            <h3>${title}</h3>
+            ${desc ? `<p>${desc}</p>` : ""}
+          </a>
+        `;
+      })
+      .join("");
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
+  } else {
+    render();
+  }
+})();
+
+// Latest notes (blog index)
+(() => {
+  const host = document.querySelector("[data-blog-latest]");
+  if (!host) return;
+
+  const grid = host.querySelector(".blog-latest-grid");
+  if (!grid) return;
+
+  const postsIndexUrl = host.getAttribute("data-posts-index") || "posts.json";
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  const getFallbackPostsIndex = () => {
+    const fallback = window.__KMB_POSTS_INDEX__;
+    return Array.isArray(fallback) ? fallback : [];
+  };
+
+  const loadPostsIndex = async () => {
+    try {
+      const res = await fetch(postsIndexUrl, { cache: "no-store" });
+      if (!res.ok) return getFallbackPostsIndex();
+      const json = await res.json();
+      return Array.isArray(json) ? json : getFallbackPostsIndex();
+    } catch {
+      return getFallbackPostsIndex();
+    }
+  };
+
+  const parseDate = (value) => {
+    const t = Date.parse(String(value || ""));
+    return Number.isFinite(t) ? t : 0;
+  };
+
+  const formatDate = (value) => {
+    const d = new Date(value);
+    if (Number.isNaN(d.getTime())) return "";
+    return d.toLocaleDateString(undefined, {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    });
+  };
+
+  const render = async () => {
+    const posts = await loadPostsIndex();
+    const index = Array.isArray(posts) ? posts : [];
+
+    if (!index.length) {
+      grid.innerHTML = '<div class="blog-search-hint">No notes available yet.</div>';
+      return;
+    }
+
+    const latest = index
+      .slice()
+      .sort((a, b) => {
+        const ad = parseDate(a.dateModified || a.datePublished);
+        const bd = parseDate(b.dateModified || b.datePublished);
+        return bd - ad;
+      })
+      .slice(0, 3);
+
+    grid.innerHTML = latest
+      .map((p) => {
+        const title = escapeHtml(p.title || "Untitled");
+        const desc = escapeHtml(p.description || "");
+        const category = escapeHtml(p.category || "");
+        const dateValue = p.dateModified || p.datePublished || "";
+        const dateLabel = dateValue ? formatDate(dateValue) : "";
+        const meta = [category, dateLabel].filter(Boolean).join(" · ");
+        const url = escapeHtml(p.url || "#");
+
+        return `
+          <a class="blog-latest-card" href="${url}">
+            ${meta ? `<span class="blog-latest-meta">${meta}</span>` : ""}
+            <h3>${title}</h3>
+            ${desc ? `<p>${desc}</p>` : ""}
+          </a>
+        `;
+      })
+      .join("");
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
+  } else {
+    render();
+  }
+})();
+
+// Ad slots: reveal only after ads are injected
+(() => {
+  const slots = Array.from(document.querySelectorAll(".ad-slot"));
+  if (!slots.length) return;
+
+  const markReady = (slot) => {
+    if (!slot.classList.contains("is-ready")) {
+      slot.classList.add("is-ready");
+    }
+  };
+
+  slots.forEach((slot) => {
+    // If content already exists, show immediately.
+    if (slot.children.length) {
+      markReady(slot);
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      if (slot.children.length) {
+        markReady(slot);
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(slot, { childList: true, subtree: true });
+  });
+
+  // Fallback: if AdSense is present, reveal after a short delay.
+  if (window.adsbygoogle) {
+    window.setTimeout(() => {
+      slots.forEach(markReady);
+    }, 2000);
+  }
+})();
+
 // Back to top
 (() => {
   if (document.querySelector(".back-to-top")) return;

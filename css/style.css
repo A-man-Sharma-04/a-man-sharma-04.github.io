@@ -544,6 +544,14 @@ i {
   margin-bottom: 50px;
 }
 
+@media (min-width: 1100px) {
+  .journey-intro {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  }
+}
+
 /* STACK LAYOUT */
 .journey-stack {
   max-width: 1400px;
@@ -772,6 +780,29 @@ i {
 
 .error-actions {
   margin-top: 40px;
+}
+
+/* Ad slot helpers (reserve space to reduce CLS when ads load) */
+.ad-slot {
+  width: 100%;
+  min-height: 250px;
+  margin: 24px 0;
+  background: rgba(var(--accent-rgb), 0.04);
+  border: 1px dashed rgba(var(--accent-rgb), 0.2);
+  border-radius: 8px;
+  display: none;
+}
+
+.ad-slot.is-ready {
+  display: block;
+}
+
+.ad-slot--horizontal {
+  min-height: 90px;
+}
+
+.ad-slot--square {
+  min-height: 250px;
 }
 
 /* Remove underlines from specific UI links */
