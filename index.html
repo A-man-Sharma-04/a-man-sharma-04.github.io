@@ -40,8 +40,32 @@
       } catch {}
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/home.css">
+  <style>
+    body {
+      margin: 0;
+      background: #0b0f14;
+      color: #e2e8f0;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    .hero-intro {
+      padding: 120px 8% 40px;
+    }
+    .hero-title {
+      font-size: clamp(2.75rem, 6vw, 3.75rem);
+      line-height: 1.05;
+      color: #7dd3fc;
+      margin: 0 0 10px;
+    }
+    .hero-subtitle {
+      max-width: 700px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+  </style>
+  <link rel="preload" as="style" href="css/style.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+  <link rel="preload" as="style" href="css/home.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/home.css"></noscript>
   <meta name="kmb-ga-id" content="G-163MTRBJF3">
 </head>
 <body class="page-home">

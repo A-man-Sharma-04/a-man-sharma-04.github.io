@@ -2,6 +2,17 @@
 // Keep this in sync with blog/posts.json.
 window.__KMB_POSTS_INDEX__ = [
   {
+    title: "Why Virtual Machines Are Used for Learning and Testing",
+    description:
+      "A beginner-friendly explanation of why virtual machines are ideal for learning, testing, and safe experimentation.",
+    category: "Linux & Systems",
+    categoryPath: "/blog/systems/",
+    url: "/blog/systems/virtual-machines-learning-testing.html",
+    tags: ["virtual machines", "virtualization", "learning", "testing", "systems", "fundamentals"],
+    datePublished: "2026-02-06",
+    dateModified: "2026-02-06",
+  },
+  {
     title: "Understanding User Space and Kernel Space in Simple Terms",
     description:
       "A simple, beginner-friendly explanation of user space vs. kernel space, why the separation exists, and how programs interact with the OS kernel.",
