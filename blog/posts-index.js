@@ -2,6 +2,17 @@
 // Keep this in sync with blog/posts.json.
 window.__KMB_POSTS_INDEX__ = [
   {
+    title: "What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation)",
+    description:
+      "A beginner-friendly, step-by-step explanation of what happens behind the scenes when you type a URL into your browser, covering DNS, servers, and operating system roles.",
+    category: "Networking",
+    categoryPath: "/blog/networking/",
+    url: "/blog/networking/what-happens-when-you-type-url.html",
+    tags: ["dns", "https", "operating systems", "browsers", "networking", "fundamentals"],
+    datePublished: "2026-02-21",
+    dateModified: "2026-02-21",
+  },
+  {
     title: "Why Virtual Machines Are Used for Learning and Testing",
     description:
       "A beginner-friendly explanation of why virtual machines are ideal for learning, testing, and safe experimentation.",

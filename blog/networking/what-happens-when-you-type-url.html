@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation) | Aman Sharma</title>
+  <meta name="description" content="A beginner-friendly, step-by-step explanation of what happens behind the scenes when you type a URL into your browser, covering DNS, servers, and operating system roles.">
+  <meta name="author" content="Aman Sharma">
+
+  <meta property="og:title" content="What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation) | Aman Sharma">
+  <meta property="og:description" content="A beginner-friendly, step-by-step explanation of what happens behind the scenes when you type a URL into your browser, covering DNS, servers, and operating system roles.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thisamansharma.is-a.dev/blog/networking/what-happens-when-you-type-url.html">
+  <meta property="og:site_name" content="Aman Sharma">
+  <meta property="og:image" content="https://thisamansharma.is-a.dev/assets/og/og-post.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Learning Note - Aman Sharma">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://thisamansharma.is-a.dev/assets/og/og-post.png">
+  <meta name="twitter:image:alt" content="Learning Note - Aman Sharma">
+
+  <link rel="canonical" href="https://thisamansharma.is-a.dev/blog/networking/what-happens-when-you-type-url.html">
+
+  <link rel="alternate" type="application/rss+xml" title="Aman Sharma — Notes" href="/rss.xml">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/blog.css">
+  <meta name="kmb-ga-id" content="G-163MTRBJF3">
+</head>
+
+<body class="page-blog page-post">
+
+<header>
+  <nav class="navbar">
+    <a href="/" class="logo"><i class="fa-solid fa-terminal"></i> Aman<span>.</span></a>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">☰</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../journey.html">Journey</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+      <li><a href="../../about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page post-page">
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <a href="/blog/">Notes</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <a href="/blog/networking/">Networking</a>
+    <span class="crumb-sep" aria-hidden="true">›</span>
+    <span aria-current="page">What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation)</span>
+  </nav>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation)</h1>
+
+    <div class="post-meta">
+      <span class="post-author">By Aman Sharma</span>
+      <span>•</span>
+      <span class="post-type">Explanatory Technical</span>
+      <span>•</span>
+      <span class="post-date">Published <time datetime="2026-02-21">Feb 21, 2026</time></span>
+      <span class="post-updated" style="display: none;" data-published="2026-02-21" data-modified="2026-02-28">• Updated <time datetime="2026-02-28">Feb 28, 2026</time></span>
+      <span>•</span>
+      <span class="post-reading-time" aria-label="Reading time"></span>
+    </div>
+
+    <ul class="post-tags" aria-label="Keywords">
+      <li><a class="post-tag no-underline" href="/blog/networking/">Networking</a></li>
+      <li><a class="post-tag no-underline" href="/blog/tags/tag.html?tag=dns" rel="tag">DNS</a></li>
+      <li><a class="post-tag no-underline" href="/blog/tags/tag.html?tag=https" rel="tag">HTTPS</a></li>
+      <li><a class="post-tag no-underline" href="/blog/tags/tag.html?tag=operating-systems" rel="tag">Operating Systems</a></li>
+      <li><a class="post-tag no-underline" href="/blog/tags/tag.html?tag=fundamentals" rel="tag">Fundamentals</a></li>
+    </ul>
+  </header>
+
+  <section class="post-intent">
+    <p>
+      This post explains, in simple terms, what happens behind the scenes when you type a URL into your browser and press Enter.
+      The goal is to connect concepts from networking and operating systems into one clear, step-by-step mental model.
+    </p>
+  </section>
+
+  <div class="ad-slot ad-slot--horizontal" aria-label="Advertisement"></div>
+
+  <section class="post-content">
+
+    <h2>Step 1: The Browser Understands the URL</h2>
+    <p>
+      When you type a URL into your browser, the browser first interprets what you entered.
+      It identifies the protocol (usually HTTPS), the domain name, and the resource path, if there is one.
+    </p>
+    <p>
+      Before anything else can happen, the browser needs to understand where you are trying to go and how to talk to that destination.
+      At this stage, nothing has been sent over the network yet; it is all local parsing and preparation.
+    </p>
+
+    <h2>Step 2: DNS - Finding the Website's Address</h2>
+    <p>
+      Computers do not understand domain names the way humans do. They communicate using IP addresses.
+      To bridge this gap, the browser and operating system rely on the Domain Name System (DNS).
+    </p>
+    <p>
+      DNS acts like the internet's phonebook. It translates a human-friendly name like <code>example.com</code> into an IP address such as <code>93.184.216.34</code>.
+      Behind the scenes, your system asks a DNS resolver:
+    </p>
+    <p>
+      &ldquo;What is the IP address of this domain?&rdquo;
+    </p>
+    <p>
+      Once the IP address is returned, your system knows where to send the request.
+      From your perspective, this feels instant, but it is a crucial lookup step in every web request.
+    </p>
+
+    <h2>Step 3: Establishing a Connection</h2>
+    <p>
+      With the IP address known, your system now needs to connect to the server.
+      This connection is usually made over TCP, which provides a reliable channel between your device and the remote server.
+    </p>
+    <p>
+      If the website uses HTTPS, which most modern sites do, an additional security layer is added on top.
+      Your browser and the server perform a handshake to agree on encryption keys and algorithms.
+    </p>
+    <p>
+      Only after this secure channel is established does the browser start sending the actual HTTP request.
+      This is what ensures your data is protected while it travels across the network.
+    </p>
+
+    <h2>Step 4: The Operating System's Role</h2>
+    <p>
+      The browser is not working alone. It relies heavily on the operating system to make all of this possible.
+    </p>
+    <p>
+      The operating system manages network communication, allocates memory, handles process execution, and coordinates data transfer.
+      When the browser wants to send data, it makes system calls that enter the kernel, where the network stack lives.
+    </p>
+    <p>
+      This ties directly into the idea of user space and kernel space: the browser runs in user space and must ask the operating system to perform low-level operations safely on its behalf.
+      Understanding this separation helps explain why applications cannot directly access hardware or the network without going through the OS.
+    </p>
+
+    <figure>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="../../assets/blog/diagrams/url-browser-os-layers-960.webp 960w, ../../assets/blog/diagrams/url-browser-os-layers.webp 1536w"
+          sizes="(max-width: 980px) 100vw, 900px">
+        <img
+          class="blog-img"
+          src="../../assets/blog/diagrams/url-browser-os-layers-960.png"
+          srcset="../../assets/blog/diagrams/url-browser-os-layers-960.png 960w, ../../assets/blog/diagrams/url-browser-os-layers.png 1536w"
+          sizes="(max-width: 980px) 100vw, 900px"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+          alt="Layered view of browser, operating system, and network stack">
+      </picture>
+      <figcaption>Browser requests flow through the OS network stack before reaching the wire.</figcaption>
+    </figure>
+
+    <h2>Step 5: The Server Responds</h2>
+    <p>
+      Once the request reaches the server hosting the website, the server takes over.
+      It receives the request, processes it, and decides what response to send back.
+    </p>
+    <p>
+      In many cases, the server may run application code, talk to databases, or fetch other resources before preparing a response.
+      The final response usually includes HTML for structure, CSS for design, JavaScript for interactivity, and references to images or other assets.
+    </p>
+    <p>
+      All of this is packaged into HTTP responses that are sent back to your browser over the established connection.
+    </p>
+
+    <h2>Step 6: The Browser Builds the Page</h2>
+    <p>
+      When the data arrives, your browser begins constructing the page.
+      It reads the HTML, builds the Document Object Model (DOM), applies CSS styles, executes JavaScript, and loads additional resources such as images and fonts.
+    </p>
+    <p>
+      This process is extremely fast and usually completes in a fraction of a second.
+      What you see as a finished page is the result of many coordinated steps happening in the background.
+    </p>
+
+    <h2>Why This Process Matters</h2>
+    <p>
+      Understanding what happens when you type a URL helps you see how networking and operating systems interact in practice.
+      It highlights the role of DNS, shows why HTTPS and encryption matter, and illustrates how browsers, operating systems, and servers cooperate.
+    </p>
+    <p>
+      For learners, this mental model connects multiple computer science concepts into one real-world example.
+      It also reinforces that everyday actions on a computer are backed by well-defined protocols and system behavior.
+    </p>
+
+    <h2>A Simple Flow Overview</h2>
+    <p>At a high level, the sequence looks like this:</p>
+    <ul>
+      <li>You type a URL into your browser.</li>
+      <li>The browser parses the URL and determines the protocol and domain.</li>
+      <li>DNS is used to find the IP address for the domain.</li>
+      <li>A connection (often HTTPS over TCP) is established with the server.</li>
+      <li>The browser sends an HTTP request.</li>
+      <li>The server processes the request and sends back a response.</li>
+      <li>The browser renders the page on your screen.</li>
+    </ul>
+
+    <figure>
+      <picture>
+        <source
+          type="image/webp"
+          srcset="../../assets/blog/diagrams/url-request-flow-960.webp 960w, ../../assets/blog/diagrams/url-request-flow.webp 1536w"
+          sizes="(max-width: 980px) 100vw, 900px">
+        <img
+          class="blog-img"
+          src="../../assets/blog/diagrams/url-request-flow-960.png"
+          srcset="../../assets/blog/diagrams/url-request-flow-960.png 960w, ../../assets/blog/diagrams/url-request-flow.png 1536w"
+          sizes="(max-width: 980px) 100vw, 900px"
+          width="960"
+          height="640"
+          loading="lazy"
+          decoding="async"
+          alt="Flow diagram from typing a URL to server response and page render">
+      </picture>
+      <figcaption>High-level request flow from URL to rendered page.</figcaption>
+    </figure>
+    <p>
+      This entire process typically happens in less than a second, even though many systems are involved along the way.
+    </p>
+
+    <h2>Conclusion</h2>
+    <p>
+      What seems like a simple action, typing a URL and pressing Enter, triggers a coordinated interaction between your browser, operating system, DNS servers, network devices, and remote web servers.
+    </p>
+    <p>
+      Building an intuition for this sequence strengthens your foundation in networking, operating systems, and web development.
+      It turns everyday browsing from a passive habit into something you can actively understand and reason about.
+    </p>
+
+  </section>
+
+  <div class="ad-slot ad-slot--horizontal" aria-label="Advertisement"></div>
+
+  <section class="post-related" aria-label="Related notes" data-posts-index="/blog/posts.json" data-max="3"></section>
+
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Aman Sharma</p>
+  </div>
+</footer>
+
+<script src="../../js/main.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://thisamansharma.is-a.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://thisamansharma.is-a.dev/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Networking",
+      "item": "https://thisamansharma.is-a.dev/blog/networking/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation)",
+      "item": "https://thisamansharma.is-a.dev/blog/networking/what-happens-when-you-type-url.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Happens When You Type a URL Into Your Browser? (Step-by-Step Explanation)",
+  "description": "A beginner-friendly, step-by-step explanation of what happens behind the scenes when you type a URL into your browser, covering DNS, servers, and operating system roles.",
+  "image": "https://thisamansharma.is-a.dev/assets/og/og-post.png",
+  "datePublished": "2026-02-21",
+  "dateModified": "2026-02-28",
+  "author": {
+    "@type": "Person",
+    "name": "Aman Sharma",
+    "url": "https://thisamansharma.is-a.dev/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thisamansharma.is-a.dev/blog/networking/what-happens-when-you-type-url.html"
+  }
+}
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4d6072f88a4b4313873898606daab537"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
