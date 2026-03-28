@@ -1,4 +1,4 @@
-// Theme (dark/light)
+﻿// Theme (dark/light)
 (() => {
   // Optional: defer Google Analytics to improve Lighthouse (reduces early 3rd-party and main-thread work).
   const maybeLoadDeferredAnalytics = () => {
@@ -1278,3 +1278,4 @@ if (toggle && navLinks) {
     terminalCard.addEventListener("touchstart", focusInputFromEvent, { passive: true });
   }
 })();
+

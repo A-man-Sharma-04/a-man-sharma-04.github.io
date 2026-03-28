@@ -125,6 +125,10 @@ html[data-theme="light"] .page-home .hero-copy {
     padding: 14px 14px;
     border-radius: 14px;
   }
+
+  .latest-notes {
+    display: none;
+  }
 }
 
 .hero-visual {
@@ -396,6 +400,12 @@ html[data-theme="light"] .terminal-head {
 
   .social-strip {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-strip a {
+    margin-bottom: 5px;
   }
 }
 

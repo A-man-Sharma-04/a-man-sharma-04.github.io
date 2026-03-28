@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const host = document.querySelector("[data-tags-root]");
   if (!host) return;
 
@@ -95,3 +95,4 @@
     render();
   }
 })();
+

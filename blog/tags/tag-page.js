@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const host = document.querySelector("[data-tag-page]");
   if (!host) return;
 
@@ -60,7 +60,7 @@
     if (!safe) return;
 
     const slug = slugify(safe);
-    const canonicalUrl = `https://thisamansharma.is-a.dev/blog/tags/tag.html?tag=${encodeURIComponent(slug || safe)}`;
+    const canonicalUrl = `https://lowlevel.tech/blog/tags/tag.html?tag=${encodeURIComponent(slug || safe)}`;
 
     const titleEl = document.getElementById("tag-title");
     if (titleEl) titleEl.textContent = `Tag: ${safe}`;
@@ -175,3 +175,4 @@
     render();
   }
 })();
+

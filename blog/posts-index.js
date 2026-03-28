@@ -1,4 +1,4 @@
-// Fallback post index for static/local browsing (e.g., file://).
+﻿// Fallback post index for static/local browsing (e.g., file://).
 // Keep this in sync with blog/posts.json.
 window.__KMB_POSTS_INDEX__ = [
   {
@@ -57,3 +57,4 @@ window.__KMB_POSTS_INDEX__ = [
     dateModified: "2026-01-22",
   },
 ];
+
